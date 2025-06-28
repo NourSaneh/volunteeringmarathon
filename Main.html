@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Centered Logo Navbar</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link src="index.js">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">
+    </script>
+
 </head>
 
 <body class="bg-white">
-<nav class="bg-[#063B0C] text-white shadow py-6">
+    <nav class="bg-[#063B0C] text-white shadow py-6">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center relative">
                 <!-- Left Links -->
@@ -58,6 +61,7 @@
                 US</button>
         </div>
     </nav>
+
     <div id="carouselExampleIndicators" class="relative" data-twe-carousel-init data-twe-ride="carousel">
         <!--Carousel indicators-->
         <div class="absolute bottom-0 left-0 right-0 z-[2] mx-[15%] mb-4 flex list-none justify-center p-0"
@@ -84,16 +88,19 @@
             <!--Second Slide-->
             <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-twe-carousel-item>
-                <img src="imgs/BG2-SlideShow.jpg"  class="block w-full max-h-[80vh] sm:max-h-[700px] object-cover" alt="Camera" />
+                <img src="imgs/BG2-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[700px] object-cover"
+                    alt="Camera" />
             </div>
             <!--Third Slide-->
             <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-twe-carousel-item>
-                <img src="imgs/BG3-SlideShow.jpg"  class="block w-full max-h-[80vh] sm:max-h-[700px] object-cover" alt="Beach Event" />
+                <img src="imgs/BG3-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[700px] object-cover"
+                    alt="Beach Event" />
             </div>
         </div>
 
         <!--Carousel controls - prev item-->
+        <!--Test-->
         <button
             class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
             type="button" data-twe-target="#carouselExampleIndicators" data-twe-slide="prev">
@@ -120,7 +127,7 @@
                 class="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">Next</span>
         </button>
     </div>
-     <section class="bg-[#D9D9D9] bg-cover bg-center py-20 px-8 relative">
+    <section class="bg-[#D9D9D9] bg-cover bg-center py-20 px-8 relative">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
             <!-- Video with red & green rectangles -->
@@ -175,7 +182,8 @@
         </div>
     </section>
 
-       <!-- Flag Secton -->
+
+    <!-- Flag Secton -->
     <section class="bg-[url('/imgs/BG-Section3.jpg')] bg-cover bg-center py-40 relative">
         <h2
             class="absolute top-4 left-1/2 transform -translate-x-1/2 font-['lexend'] text-[rgba(156,2,2,0.5)] text-5xl font-bold">
@@ -204,55 +212,42 @@
             class="absolute bottom-4 left-1/2 transform -translate-x-1/2 font-['lexend']  text-[rgba(34,82,28,0.8)] text-5xl font-bold">
             ALL UNITED FOR LEBANON </h2>
     </section>
-    <!--Karim Work Stats Section -->
-    <!-- Karim Work image section -->
-    <section class="relative w-full bg-white">
-        <!-- Content Box -->
-        <div class="bg-gray-200 relative z-10">
-            <?xml version="1.0" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FF0000 " fill-opacity="0.7" d="M0,192L48,170.7C96,149,192,107,288,122.7C384,139,480,213,576,245.3C672,277,768,267,864,240C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
+    <!-- Gallery Section -->
+    <section class="relative bg-gray-100 overflow-hidden">
 
-            <h2 class="text-center text-2xl font-semibold mb-8">OUR GALLERY</h2>
+        <!-- Title -->
+        <div class="text-center py-8">
+            <h2 class="text-3xl font-bold text-gray-800">OUR GALLERY</h2>
+        </div>
 
-            <!-- Green Blobs (left) -->
-            <div class="absolute left-4 top-1/6 flex flex-col gap-12 z-20">
-            <img src="imgs/blob-haikei-1.svg" class="w-32" alt="">
-            <img src="imgs/blob-haikei-2.svg" class="w-32" alt="">
-            <img src="imgs/blob-haikei-3.svg" class="w-32" alt="">
+        <!-- Wrapper for gallery and arrows -->
+        <div class="relative max-w-6xl mx-auto px-6">
+
+            <!-- Left Arrow -->
+            <button onclick="changePage(-1)"
+                class="absolute -left-6 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-200 transition">
+                <img src="imgs/icons8-back-arrow-50.png" alt="Left Arrow" class="w-6 h-6">
+            </button>
+
+            <!-- Right Arrow -->
+            <button onclick="changePage(1)"
+                class="absolute -right-6 top-1/2 -translate-y-1/2 z-10 bg-white p-2 rounded-full shadow hover:bg-gray-200 transition">
+                <img src="imgs/icons8-back-arrow-50.png" alt="Right Arrow" class="w-6 h-6 rotate-180">
+            </button>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pb-12">
+                <!-- JavaScript will inject image boxes here -->
             </div>
 
-            <!-- Green Blobs (right) -->
-            <div class="absolute right-4 top-1/6 flex flex-col gap-12 z-20 items-end">
-            <img src="imgs/blob-haikei-4.svg" class="w-32" alt="">
-            <img src="imgs/blob-haikei-5.svg" class="w-32" alt="">
-            <img src="imgs/blob-haikei-6.svg" class="w-32" alt="">
-            </div>
-
-            <!-- Gallery Grid (narrower boxes) -->
-            <div class="grid grid-cols-3 gap-6 mx-auto max-w-5xl">
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-                <div class="bg-black w-[70%] h-32 mx-auto"></div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <div class="absolute left-32 top-[52%] z-30 w-8 h-8">
-                <button><img src="imgs/icons8-back-arrow-50.png" /></button>
-            </div>
-            
-            <div class="absolute right-32 top-[52%] z-30 w-8 h-8">
-                <button class="rotate-180"><img src="imgs/icons8-back-arrow-50.png" /></button>
-            </div>
-            <?xml version="1.0" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#FF0000 " fill-opacity="0.7" d="M0,192L48,170.7C96,149,192,107,288,122.7C384,139,480,213,576,245.3C672,277,768,267,864,240C960,213,1056,171,1152,154.7C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
-            
         </div>
     </section>
+    <script>
+        const allItems = Array.from({ length: 30 }, (_, i) => i + 1); // Simulate 30 images
+        const itemsPerPage = 9;
+        let currentPage = 0;
 
+<<<<<<< HEAD
     <!-- Karim Work footer section -->
     <section class="relative w-full text-white text-center flex items-center justify-center pt-12 pb-12">
     <!-- Background Image -->
@@ -275,12 +270,73 @@
         <a href="#" class="bg-white text-black font-semibold rounded-full px-6 py-3 flex items-center gap-2 hover:bg-gray-200 transition">
             BECOME A SPONSER <span class="text-xl">➔</span>
         </a>
-        </div>
-    </div>
-    </section>
+=======
+        function renderGallery() {
+            const gallery = document.getElementById('gallery-grid');
+            gallery.innerHTML = '';
 
+            const start = currentPage * itemsPerPage;
+            const end = start + itemsPerPage;
+            const items = allItems.slice(start, end);
+
+            for (let i of items) {
+                const div = document.createElement('div');
+                div.className = 'bg-black h-40 rounded-lg shadow-md';
+                gallery.appendChild(div);
+            }
+
+        }
+
+        function changePage(direction) {
+            const totalPages = Math.ceil(allItems.length / itemsPerPage);
+            currentPage += direction;
+            if (currentPage < 0) currentPage = 0;
+            if (currentPage >= totalPages) currentPage = totalPages - 1;
+            renderGallery();
+        }
+        renderGallery();
+    </script>
+    <!-- JavaScript to make arrows work -->
+    <script>
+        function scrollGallery(direction) {
+            const container = document.getElementById('gallery-scroll');
+            const scrollAmount = 300; // Adjust as needed
+            container.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+
+    <!-- Volunteer Section -->
+    <section class="relative w-full h-screen text-white text-center flex items-center justify-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 py-40">
+            <img src="imgs/BG-section5.jpg" alt="Volunteers" class="w-full h-full object-center object-cover " />
+            <div class="absolute inset-0 bg-red-700 bg-opacity-60"></div>
+>>>>>>> f8242345fc5dd862fa78a3e120f12615307d33b9
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 px-4">
+            <h1 class=" text-3xl md:text-5xl font-semibold leading-snug mb-48">
+                Uniting Volunteers to Uplift and<br />
+                Transform Lebanon Together
+            </h1>
+            <div class="flex flex-wrap justify-center gap-96">
+                <a href="#"
+                    class="bg-white text-black font-semibold rounded-full px-6 py-3 flex items-center gap-2 hover:bg-gray-200 transition">
+                    BECOME A VOLUNTEER <span class="text-xl">➔</span>
+                </a>
+                <a href="#"
+                    class="font-[Roboto_Mono] bg-white text-black font-semibold rounded-full px-6 py-3 flex items-center gap-2 hover:bg-gray-200 transition">
+                    BECOME A SPONSER <span class="text-xl">➔</span>
+                </a>
+            </div>
+        </div>
+    </section>
     <!-- footer -->
-     <footer class="bg-red-700 text-white py-12 px-6">
+    <footer class="bg-red-700 text-white py-12 px-6">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start">
             <!-- Left section with logo and tagline -->
             <div class="mb-8 lg:mb-0 lg:max-w-md">
@@ -289,7 +345,8 @@
                     <div class="mr-3">
                         <!-- Heart icon -->
                         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
                     </div>
                     <h2 class="text-xl font-semibold">
@@ -297,7 +354,7 @@
                         Marathon
                     </h2>
                 </div>
-                
+
                 <!-- Tagline -->
                 <p class="text-gray-300 text-sm leading-relaxed">
                     Grow, Connect, and<br>
@@ -307,7 +364,7 @@
                     Experiences.
                 </p>
             </div>
-            
+
             <!-- Middle section with quick links -->
             <div class="mb-8 lg:mb-0">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">QUICK LINKS</h3>
@@ -318,42 +375,45 @@
                     <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
-            
+
             <!-- Right section with social links -->
             <div class="lg:text-right">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">FOLLOW US:</h3>
-                
+
                 <!-- Social media icons -->
                 <div class="flex space-x-4 mb-6 lg:justify-end">
                     <!-- TikTok icon -->
-                    <a href="#" class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                    <a href="#"
+                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                         </svg>
                     </a>
-                    
+
                     <!-- Instagram icon -->
-                    <a href="#" class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                    <a href="#"
+                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
                 </div>
-                
+
                 <!-- Email -->
                 <div class="flex items-center space-x-2 lg:justify-end">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        <path
+                            d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
                     </svg>
                     <span class="text-sm text-gray-300">volunteeringmarathon@gmail.com</span>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
-    <script type="module" src="index.js"></script>
-        <script type="module">
-         import { Carousel, initTWE } from "https://esm.sh/tw-elements";
+    <script type="module">
+        import { Carousel, initTWE } from "https://esm.sh/tw-elements";
 
         initTWE({ Carousel });
 
@@ -384,6 +444,10 @@
         document.getElementById("btn-goal").addEventListener("click", () => {
             descEl.textContent = goalText;
         });
+    </script>
+
 </body>
+
+</html>
 
 </html>
