@@ -26,10 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
     }
 
     if (move_uploaded_file($fileTmp, $filePath)) {
-        $stmt = $pdo->prepare("INSERT INTO images (filename, uploaded_at) VALUES (?, NOW())");
-        $stmt->execute([$uniqueName]);
-
-        //header("Location: ../index.html?file=" . urlencode($uniqueName));
         header("Location: ../admin/index.html");
         exit();
     } else {

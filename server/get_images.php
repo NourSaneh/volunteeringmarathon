@@ -25,11 +25,11 @@ try {
         $filePath = $uploadDir . $file;
         $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
         
-        // Verify: extension + actual image file
+        // Verification
         if (in_array($ext, $allowedExtensions) && is_file($filePath)) {
             $images[] = [
                 'filename' => $file,
-                'path' => 'uploads/' . $file  // Frontend-accessible path
+                'path' => 'uploads/' . $file 
             ];
         }
     }
