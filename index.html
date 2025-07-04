@@ -31,6 +31,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
 </head>
 
 <body class="bg-white">
@@ -101,21 +107,20 @@
         </div>
 
         <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-            <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none min-h-screen"
                 data-twe-carousel-item data-twe-carousel-active>
-                <img src="imgs/BG1-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[1000px] object-cover"
-                    alt="Wild Landscape" />
+                <img src="imgs/BG1-SlideShow.jpg" class="block w-full h-screen object-cover" alt="Wild Landscape" />
             </div>
-            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none min-h-screen"
                 data-twe-carousel-item>
-                <img src="imgs/BG2-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[900px] object-cover"
-                    alt="Camera" />
+                <img src="imgs/BG2-SlideShow.jpg" class="block w-full h-screen object-cover" alt="Camera" />
             </div>
-            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
+
+            <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none min-h-screen"
                 data-twe-carousel-item>
-                <img src="imgs/BG3-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[900px] object-cover"
-                    alt="Beach Event" />
+                <img src="imgs/BG3-SlideShow.jpg" class="block w-full h-screen object-cover" alt="Beach Event" />
             </div>
+
         </div>
 
         <!--Carousel controls - prev item-->
@@ -187,9 +192,11 @@
 
                 <div class="flex items-center justify-center lg:justify-start gap-4">
                     <div class="relative -translate-x-6 translate-y-10">
-                        <span class="bg-[#4E4E4E] text-white px-6 py-5 rounded-sm text-sm font-semibold">
+                        <span
+                            class="badge-days-change bg-[#4E4E4E] text-white px-6 py-5 rounded-sm text-sm font-semibold">
                             42 DAYS FOR CHANGE
                         </span>
+
                     </div>
                 </div>
             </div>
@@ -206,25 +213,60 @@
         <!-- Stats Section -->
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-16 text-white">
             <div class="text-center">
-                <h3 class="text-4xl   font-['anybody'] font-bold">200+</h3>
-                <p class="text-xl font-['Montserrat'] ">Days</p>
+                <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                <p class="text-xl font-['Montserrat']">Days</p>
             </div>
             <div class="text-center">
-                <h3 class="text-4xl font-['anybody'] font-bold">200+</h3>
-                <p class="font-['Montserrat'] text-xl">Districts</p>
+                <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                <p class="text-xl font-['Montserrat']">Districts</p>
             </div>
             <div class="text-center">
-                <h3 class="text-4xl font-['anybody'] font-bold">2500+</h3>
-                <p class="text-xl font-['Montserrat'] ">Volunteers</p>
+                <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="2500">0</h3>
+                <p class="text-xl font-['Montserrat']">Volunteers</p>
             </div>
             <div class="text-center">
-                <h3 class="text-4xl font-['anybody']  font-bold">200+</h3>
-                <p class="text-xl font-['Montserrat'] ">Projects</p>
+                <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                <p class="text-xl font-['Montserrat']">Projects</p>
             </div>
         </div>
         <h2
             class="absolute bottom-4 left-1/2 transform -translate-x-1/2 font-['Merriweather']  text-[rgba(34,82,28,0.8)] text-5xl font-bold">
             ALL UNITED FOR LEBANON </h2>
+        <script>
+            const counters = document.querySelectorAll('.count-up');
+
+            const animateCounters = () => {
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // total time in ms
+                    const startTime = performance.now();
+
+                    const update = (currentTime) => {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const value = Math.floor(progress * target);
+                        counter.textContent = value.toLocaleString(); // add commas if needed
+                        if (progress < 1) requestAnimationFrame(update);
+                        else counter.textContent = target + '+'; // finalize with '+'
+                    };
+
+                    requestAnimationFrame(update);
+                });
+            };
+
+            // Optionally animate only when visible
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.disconnect(); // run only once
+                    }
+                });
+            });
+
+            observer.observe(document.querySelector('.count-up'));
+        </script>
+
     </section>
     <!-- Gallery Section -->
     <section class="relative bg-gray-100 overflow-hidden">
@@ -345,39 +387,41 @@
         // Start loading images when page loads
         document.addEventListener('DOMContentLoaded', loadGallery);
     </script>
-<section class="relative w-full min-h-[80vh] text-white flex items-center justify-center overflow-hidden">
-    <!-- Background Image with Red Overlay -->
-    <div class="absolute inset-0">
-        <img src="imgs/BG-section5.jpg" alt="Volunteers" class="w-full h-full object-cover object-center"
-            loading="lazy" />
-        <div class="absolute inset-0 bg-red-700 bg-opacity-70 sm:bg-opacity-60"></div>
-    </div>
-
-    <!-- Content Container -->
-    <div class="relative z-10 w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16 text-center">
-        <!-- Revised Title with better line separation -->
-        <div class="space-y-2 mb-12 sm:mb-16">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Uniting Volunteers to Uplift and
-            </h1>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white-600 px-4 py-2 inline-block">
-                Transform Lebanon Together
-            </h1>
+    <!-- Volunteer Section-->
+    <section class="relative w-full min-h-[80vh] text-white flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="imgs/BG-section5.jpg" alt="Volunteers" class="w-full h-full object-cover object-center"
+                loading="lazy" />
+            <div class="absolute inset-0 bg-red-700 bg-opacity-70 sm:bg-opacity-60"></div>
         </div>
 
-        <!-- Buttons - simplified and stacked on mobile -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-            <a href="#" class="bg-white text-black font-semibold rounded-full px-8 py-3 sm:py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg drop-shadow-lg">
-                BECOME A VOLUNTEER <span class="text-xl">→</span>
-            </a>
-            <a href="#" class="bg-white text-black font-semibold rounded-full px-8 py-3 sm:py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg drop-shadow-lg">
-                BECOME A SPONSOR <span class="text-xl">→</span>
-            </a>
+        <div class="relative z-10 w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16 text-center">
+            <div class="space-y-2 mb-12 sm:mb-16">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                    Uniting Volunteers to Uplift and
+                </h1>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white-600 px-4 py-2 inline-block">
+                    Transform Lebanon Together
+                </h1>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                <a href="#"
+                    class="relative overflow-hidden group rounded-full bg-white text-black font-semibold px-8 py-4 flex items-center justify-center gap-2 text-lg shadow-md transition-transform duration-300 ease-out hover:scale-105 hover:-skew-x-2">
+                    <span class="transition-all duration-300 group-hover:translate-x-1">BECOME A VOLUNTEER</span>
+                    <span class="text-xl transition-transform duration-300 transform group-hover:translate-x-2">→</span>
+                </a>
+
+
+                <a href="#"
+                    class="relative overflow-hidden group rounded-full bg-white text-black font-semibold px-8 py-4 flex items-center justify-center gap-2 text-lg shadow-md transition-transform duration-300 ease-out hover:scale-105 hover:-skew-x-2">
+                    <span class="transition-all duration-300 group-hover:translate-x-1">BECOME A SPONSOR</span>
+                    <span class="text-xl transition-transform duration-300 transform group-hover:translate-x-2">→</span>
+                </a>
+
+            </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
     <!-- footer -->
     <footer class="bg-red-700 text-white py-12 px-6">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start">
@@ -406,23 +450,23 @@
             <div class="mb-8 lg:mb-0">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">QUICK LINKS</h3>
                 <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Events</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Donate</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="Projects.html" class="hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
             <div class="lg:text-right">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">FOLLOW US:</h3>
                 <div class="flex space-x-4 mb-6 lg:justify-end">
-                    <a href="#"
+                    <a href="https://www.tiktok.com/@volunteeringmarathon?_t=ZS-8xjjY8pQ12d&_r=1"
                         class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                         </svg>
                     </a>
-                    <a href="#"
+                    <a href="https://www.instagram.com/volunteeringmarathon/"
                         class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -440,9 +484,20 @@
             </div>
         </div>
     </footer>
+    <div class="bg-gray-100 py-4 text-center text-sm text-gray-600">
+        <div class="container mx-auto px-4">
+            © 2025 All Rights Reserved. Created by
+            <a href="noursaneh.com" class="hover:underline">Nour saneh</a>
+            &
+            <a href="" class="hover:underline">Karim Hatoum</a>
+        </div>
+    </div>
     <script type="module">
         import { Carousel, initTWE } from "https://esm.sh/tw-elements";
+        import { gsap } from "https://esm.sh/gsap";
+        import { ScrollTrigger } from "https://esm.sh/gsap/ScrollTrigger";
 
+        gsap.registerPlugin(ScrollTrigger);
         initTWE({ Carousel });
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -454,83 +509,79 @@
                     mobileMenu.classList.toggle('hidden');
                 });
             }
-        });
 
-        const descEl = document.getElementById("about-desc");
+            const descEl = document.getElementById("about-desc");
 
-        const missionText = "Our mission is to ignite the spirit of volunteerism across Lebanon by connecting youth with meaningful opportunities to serve their communities, promote unity, and drive positive change.";
-        const visionText = "We envision a future where every young individual in Lebanon is empowered to become a changemaker building a stronger, more united society through consistent acts of kindness and service.";
-        const goalText = "Our goal is to mobilize over 5,000 volunteers by 2025, host impactful community events in all regions of Lebanon, and build lasting partnerships with NGOs to amplify our impact.";
+            const missionText = "Our mission is to ignite the spirit of volunteerism across Lebanon by connecting youth with meaningful opportunities to serve their communities, promote unity, and drive positive change.";
+            const visionText = "We envision a future where every young individual in Lebanon is empowered to become a changemaker building a stronger, more united society through consistent acts of kindness and service.";
+            const goalText = "Our goal is to mobilize over 5,000 volunteers by 2025, host impactful community events in all regions of Lebanon, and build lasting partnerships with NGOs to amplify our impact.";
 
-        document.getElementById("btn-mission").addEventListener("click", () => {
-            descEl.textContent = missionText;
-        });
+            document.getElementById("btn-mission").addEventListener("click", () => {
+                descEl.textContent = missionText;
+            });
+            document.getElementById("btn-vision").addEventListener("click", () => {
+                descEl.textContent = visionText;
+            });
+            document.getElementById("btn-goal").addEventListener("click", () => {
+                descEl.textContent = goalText;
+            });
 
-        document.getElementById("btn-vision").addEventListener("click", () => {
-            descEl.textContent = visionText;
-        });
+            // Logo pulse animation
+            gsap.to("nav img", {
+                scale: 1.1,
+                repeat: -1,
+                yoyo: true,
+                duration: 2,
+                ease: "sine.inOut"
+            });
 
-        document.getElementById("btn-goal").addEventListener("click", () => {
-            descEl.textContent = goalText;
-        });
-        // Logo pulse animation
-        gsap.to("nav img", {
-            scale: 1.1,
-            repeat: -1,
-            yoyo: true,
-            duration: 2,
-            ease: "sine.inOut"
-        });
-        // Animate the video container with the colored rectangles
-        gsap.from(".relative.w-80.h-96", {
-            scrollTrigger: {
-                trigger: ".relative.w-80.h-96",
-                start: "top 80%",
-                toggleActions: "play none none none"
-            },
-            x: -100,
-            opacity: 0,
-            duration: 1,
-            ease: "back.out(1.7)"
-        });
+            // Animate the video container
+            gsap.from(".w-80.h-96", {
+                scrollTrigger: {
+                    trigger: ".w-80.h-96",
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                },
+                x: -100,
+                opacity: 0,
+                duration: 1,
+                ease: "back.out(1.7)"
+            });
 
-        // About Section Master Timeline
-        const aboutTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: ".bg-[#D9D9D9]",
-                start: "top 70%",
-                toggleActions: "play none none none",
-                markers: false
-            }
-        });
+            const aboutTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".about-section", // <-- use a custom class!
+                    start: "top 70%",
+                    toggleActions: "play none none none"
+                }
+            });
 
-        //Animate the colored rectangles 
-        aboutTimeline.from(".bg-green-700", {
-            x: -100,
-            y: 100,
-            rotation: -15,
-            opacity: 0,
-            duration: 0.8,
-            ease: "back.out(1.7)"
-        }, 0);
+            aboutTimeline.from(".bg-green-700", {
+                x: -100,
+                y: 100,
+                rotation: -15,
+                opacity: 0,
+                duration: 2,
+                ease: "back.out(1.7)"
+            }, 0);
 
-        aboutTimeline.from(".bg-red-600", {
-            x: 100,
-            y: -100,
-            rotation: 15,
-            opacity: 0,
-            duration: 0.8,
-            ease: "back.out(1.7)"
-        }, 0);
+            aboutTimeline.from(".bg-red-600", {
+                x: 100,
+                y: -100,
+                rotation: 15,
+                opacity: 0,
+                duration: 2,
+                ease: "back.out(1.7)"
+            }, 0);
 
-
-        // Add subtle continuous animation to video container 
-        gsap.to(".relative.w-80.h-96", {
-            y: 10,
-            duration: 3,
-            repeat: -1,
-            yoyo: true,
-            ease: "sine.inOut"
+            // Continuous bounce for video box
+            gsap.to(".w-80.h-96", {
+                y: 10,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut"
+            });
         });
     </script>
 

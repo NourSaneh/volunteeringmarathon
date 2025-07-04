@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered Logo Navbar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link src="index.js">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
+    </script>
+
+</head>
+
+<body class="bg-white">
+    <nav class="bg-[#063B0C] text-white shadow py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center relative">
+                <!-- Left Links -->
+                <div class="hidden lg:flex space-x-20 items-center flex-1">
+                    <button
+                        class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+                    <a href="index.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                    <a href="Projects.html" class="text-white font-medium hover:text-gray-300">Projects</a>
+                </div>
+
+                <!-- Center Logo -->
+                <div class="absolute left-1/2 transform -translate-x-1/2">
+                    <img src="imgs/Logo.png" alt="Logo" class="h-14 sm:h-16 md:h-20 w-auto">
+                </div>
+
+                <!-- Right Links -->
+                <div class="hidden lg:flex space-x-20 items-center justify-end flex-1">
+                    <a href="donate.html" class="text-white font-medium hover:text-gray-300">Donate</a>
+                    <a href="contact.html" class="text-white font-medium hover:text-gray-300">Contact</a>
+                    <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
+                        US</button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden px-4 pt-4 pb-6 space-y-4">
+            <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+            <a href="#" class="block text-white font-medium hover:text-gray-300">Schedule</a>
+            <a href="#" class="block text-white font-medium hover:text-gray-300">Events</a>
+            <a href="#" class="block text-white font-medium hover:text-gray-300">Donate</a>
+            <a href="#" class="block text-white font-medium hover:text-gray-300">Contact</a>
+            <button class="w-full bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
+                US</button>
+        </div>
+    </nav>
+
+
+    <body class="font-sans bg-gray-50">
+        <div class="relative h-96 bg-cover bg-center" style="background-image:url(images/banner/banner1.jpg)">
+            <div class="absolute inset-0 bg-black/50 flex items-center">
+                <div class="container mx-auto px-4 text-center text-white">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
+
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+
+    </html>
+</body>
