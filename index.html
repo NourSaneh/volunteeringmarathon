@@ -101,19 +101,16 @@
         </div>
 
         <div class="relative w-full overflow-hidden after:clear-both after:block after:content-['']">
-            <!--First Slide-->
             <div class="relative float-left -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-twe-carousel-item data-twe-carousel-active>
                 <img src="imgs/BG1-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[1000px] object-cover"
                     alt="Wild Landscape" />
             </div>
-            <!--Second Slide-->
             <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-twe-carousel-item>
                 <img src="imgs/BG2-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[900px] object-cover"
                     alt="Camera" />
             </div>
-            <!--Third Slide-->
             <div class="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
                 data-twe-carousel-item>
                 <img src="imgs/BG3-SlideShow.jpg" class="block w-full max-h-[80vh] sm:max-h-[900px] object-cover"
@@ -122,7 +119,6 @@
         </div>
 
         <!--Carousel controls - prev item-->
-        <!--Test 2 -->
         <button
             class="absolute bottom-0 left-0 top-0 z-[1] flex w-[15%] items-center justify-center border-0 bg-none p-0 text-center text-white opacity-50 transition-opacity duration-150 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] hover:text-white hover:no-underline hover:opacity-90 hover:outline-none focus:text-white focus:no-underline focus:opacity-90 focus:outline-none motion-reduce:transition-none"
             type="button" data-twe-target="#carouselExampleIndicators" data-twe-slide="prev">
@@ -164,11 +160,9 @@
                 </div>
             </div>
 
-            <!-- Text Content hello nour-->
             <div class="flex-1 text-center lg:text-left">
                 <p class="text-sm text-red-600  font-bold uppercase mb-3">About Us</p>
                 <h2 class="text-3xl font-['Merriweather'] font-bold mb-4">Help Us Make A change:</h2>
-                <!-- Buttons -->
                 <div class="flex justify-center lg:justify-start space-x-4 mb-6">
                     <button id="btn-mission"
                         class="bg-red-600 hover:bg-green-600 text-white font-semibold px-6 py-3 text-lg rounded-md transition-all duration-300 hover:scale-105">
@@ -191,9 +185,8 @@
                     meaningful opportunities to serve their communities, promote unity, and drive positive change.
                 </p>
 
-                <!-- 42 Days and Flag -->
                 <div class="flex items-center justify-center lg:justify-start gap-4">
-                    <div class="relative -translate-x-6 translate-y-12">
+                    <div class="relative -translate-x-6 translate-y-10">
                         <span class="bg-[#4E4E4E] text-white px-6 py-5 rounded-sm text-sm font-semibold">
                             42 DAYS FOR CHANGE
                         </span>
@@ -352,47 +345,43 @@
         // Start loading images when page loads
         document.addEventListener('DOMContentLoaded', loadGallery);
     </script>
-    <!-- Volunteer Section -->
-    <!-- Volunteer Section -->
-    <section class="relative w-full min-h-[80vh] text-white flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Red Overlay -->
-        <div class="absolute inset-0">
-            <img src="imgs/BG-section5.jpg" alt="Volunteers" class="w-full h-full object-cover object-center"
-                loading="lazy" />
-            <div class="absolute inset-0 bg-red-700 bg-opacity-70 sm:bg-opacity-60"></div>
-        </div>
+<section class="relative w-full min-h-[80vh] text-white flex items-center justify-center overflow-hidden">
+    <!-- Background Image with Red Overlay -->
+    <div class="absolute inset-0">
+        <img src="imgs/BG-section5.jpg" alt="Volunteers" class="w-full h-full object-cover object-center"
+            loading="lazy" />
+        <div class="absolute inset-0 bg-red-700 bg-opacity-70 sm:bg-opacity-60"></div>
+    </div>
 
-        <!-- Content Container -->
-        <div class="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8 py-20 text-center lg:text-left">
-            <!-- Heading -->
-            <h1
-                class="text-4xl sm:text-5xl lg:text-6xl font-['Merriweather'] font-bold leading-tight mb-10 text-balance">
-                Uniting Volunteers to Uplift and<br class="hidden md:block" />
+    <!-- Content Container -->
+    <div class="relative z-10 w-full max-w-4xl px-4 sm:px-6 lg:px-8 py-12 lg:py-16 text-center">
+        <!-- Revised Title with better line separation -->
+        <div class="space-y-2 mb-12 sm:mb-16">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                Uniting Volunteers to Uplift and
+            </h1>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white-600 px-4 py-2 inline-block">
                 Transform Lebanon Together
             </h1>
-
-            <!-- Buttons (Sponsor now comes first) -->
-            <div
-                class="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 sm:gap-6">
-                <a href="#"
-                    class="bg-white text-black font-semibold rounded-full px-8 py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg">
-                    BECOME A SPONSOR <span class="text-xl">➔</span>
-                </a>
-                <a href="#"
-                    class="bg-white text-black font-semibold rounded-full px-8 py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg">
-                    BECOME A VOLUNTEER <span class="text-xl">➔</span>
-                </a>
-            </div>
         </div>
-    </section>
+
+        <!-- Buttons - simplified and stacked on mobile -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+            <a href="#" class="bg-white text-black font-semibold rounded-full px-8 py-3 sm:py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg drop-shadow-lg">
+                BECOME A VOLUNTEER <span class="text-xl">→</span>
+            </a>
+            <a href="#" class="bg-white text-black font-semibold rounded-full px-8 py-3 sm:py-4 flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-300 text-lg drop-shadow-lg">
+                BECOME A SPONSOR <span class="text-xl">→</span>
+            </a>
+        </div>
+    </div>
+</section>
 
 
     <!-- footer -->
     <footer class="bg-red-700 text-white py-12 px-6">
         <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start">
-            <!-- Left section with logo and tagline -->
             <div class="mb-8 lg:mb-0 lg:max-w-md">
-                <!-- Logo with heart icon -->
                 <div class="flex items-center mb-6">
                     <div class="mr-3">
                         <!-- Heart icon -->
@@ -406,8 +395,6 @@
                         Marathon
                     </h2>
                 </div>
-
-                <!-- Tagline -->
                 <p class="text-gray-300 text-sm leading-relaxed">
                     Grow, Connect, and<br>
                     Make an Impact with<br>
@@ -416,8 +403,6 @@
                     Experiences.
                 </p>
             </div>
-
-            <!-- Middle section with quick links -->
             <div class="mb-8 lg:mb-0">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">QUICK LINKS</h3>
                 <ul class="space-y-2 text-sm text-gray-300">
@@ -427,14 +412,9 @@
                     <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
                 </ul>
             </div>
-
-            <!-- Right section with social links -->
             <div class="lg:text-right">
                 <h3 class="text-sm font-medium mb-4 tracking-wide">FOLLOW US:</h3>
-
-                <!-- Social media icons -->
                 <div class="flex space-x-4 mb-6 lg:justify-end">
-                    <!-- TikTok icon -->
                     <a href="#"
                         class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -442,8 +422,6 @@
                                 d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                         </svg>
                     </a>
-
-                    <!-- Instagram icon -->
                     <a href="#"
                         class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -452,8 +430,6 @@
                         </svg>
                     </a>
                 </div>
-
-                <!-- Email -->
                 <div class="flex items-center space-x-2 lg:justify-end">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path
