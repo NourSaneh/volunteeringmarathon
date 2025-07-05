@@ -1,341 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Centered Logo Navbar</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link src="index.js">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Shuffle/5.2.3/shuffle.min.js"></script>
-    </script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Projects</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
 </head>
-
 <body class="bg-white">
-    <nav class="bg-[#063B0C] text-white shadow py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center relative">
-                <div class="hidden lg:flex space-x-20 items-center flex-1">
-                    <button
-                        class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
-                    <a href="index.html" class="text-white font-medium hover:text-gray-300">Home</a>
-                    <a href="Projects.html" class="text-white font-medium hover:text-gray-300">Projects</a>
-                </div>
 
-                <div class="absolute left-1/2 transform -translate-x-1/2">
-                    <img src="imgs/Logo.png" alt="Logo" class="h-14 sm:h-16 md:h-20 w-auto">
-                </div>
-                <div class="hidden lg:flex space-x-20 items-center justify-end flex-1">
-                    <a href="donate.html" class="text-white font-medium hover:text-gray-300">Donate</a>
-                    <a href="contact.html" class="text-white font-medium hover:text-gray-300">Contact</a>
-                    <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
-                        US</button>
-                </div>
+  <!-- Navbar -->
+  <nav class="bg-[#063B0C] text-white shadow py-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center relative">
+        <div class="hidden lg:flex space-x-20 items-center flex-1">
+          <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+          <a href="index.html" class="text-white font-medium hover:text-gray-300">Home</a>
+          <a href="Projects.html" class="text-white font-medium hover:text-gray-300">Projects</a>
+        </div>
 
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+          <img src="imgs/Logo.png" alt="Logo" class="h-14 sm:h-16 md:h-20 w-auto">
+        </div>
+
+        <div class="hidden lg:flex space-x-20 items-center justify-end flex-1">
+          <a href="todo-donate.html" class="text-white font-medium hover:text-gray-300">Donate</a>
+          <a href="contact.html" class="text-white font-medium hover:text-gray-300">Contact</a>
+          <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN US</button>
+        </div>
+
+        <div class="lg:hidden flex items-center">
+          <button id="menu-btn" class="text-white focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="lg:hidden hidden px-4 pt-4 pb-6 space-y-4">
+      <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+      <a href="index.html" class="block text-white font-medium hover:text-gray-300">Home</a>
+      <a href="Projects.html" class="block text-white font-medium hover:text-gray-300">Projects</a>
+      <a href="donate.html" class="block text-white font-medium hover:text-gray-300">Donate</a>
+      <a href="contact.html" class="block text-white font-medium hover:text-gray-300">Contact</a>
+      <button class="w-full bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN US</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="relative h-96 bg-cover bg-center" style="background-image:url(imgs/Project-BG.png)">
+    <div class="absolute inset-0 bg-black/50 flex items-center">
+      <div class="container mx-auto px-4 text-center text-white">
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold">Our Projects</h1>
+      </div>
+    </div>
+  </div>
+
+<!-- Projects Section -->
+<section class="py-16 px-4">
+    <div class="container mx-auto">
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-2 mb-12">
+            <button onclick="filterProjects('all')" class="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition">Show All</button>
+            <button onclick="filterProjects('Sponsored')" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition">Sponsored</button>
+            <button onclick="filterProjects('Educational')" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition">Educational</button>
+            <button onclick="filterProjects('Nature')" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition">Nature</button>
+            <button onclick="filterProjects('Residential')" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition">Residential</button>
+            <button onclick="filterProjects('Healthcare')" class="px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition">Healthcare</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Filled by JS -->
+        </div>
+
+        <!-- Pagination -->
+        <div id="pagination" class="flex justify-center mt-12 space-x-2 hidden">
+            <!-- Pagination buttons will be added here -->
+        </div>
+    </div>
+</section>
+  <!-- footer -->
+<footer class="bg-red-700 text-white">
+    <div class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Logo and Description -->
+            <div class="lg:col-span-2">
+                <div class="flex items-center mb-4">
+                    <div class="mr-3">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                         </svg>
-                    </button>
+                    </div>
+                    <h2 class="text-xl font-semibold">
+                        Volunteering<br>Marathon
+                    </h2>
                 </div>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Grow, Connect, and Make an Impact with Exclusive Volunteering Experiences.
+                </p>
             </div>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden px-4 pt-4 pb-6 space-y-4">
-            <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Schedule</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Events</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Donate</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Contact</a>
-            <button class="w-full bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
-                US</button>
-        </div>
-    </nav>
-    <!DOCTYPE html>
-    <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <title>Constra - Construction Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-        <style>
-            .project-item {
-                transition: all 0.3s ease;
-            }
-
-            .project-item:hover {
-                transform: translateY(-5px);
-            }
-        </style>
-    </head>
-
-    <body class="font-sans bg-gray-50">
-        <div class="relative h-96 bg-cover bg-center" style="background-image:url(imgs/Project-BG.png)">
-            <div class="absolute inset-0 bg-black/50 flex items-center">
-                <div class="container mx-auto px-4 text-center text-white">
-<h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4">
-    Projects
-</h1>
-                </div>
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Quick Links</h3>
+                <ul class="space-y-2 text-sm text-gray-300">
+                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                    <li><a href="Projects.html" class="hover:text-white transition-colors">Projects</a></li>
+                    <li><a href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
+                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Projects Section -->
-        <section class="py-16 px-4">
-            <div class="container mx-auto">
-                <!-- Filter Buttons -->
-                <div class="flex flex-wrap justify-center gap-2 mb-12">
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                        Show All
-                    </button>
-                    <button class="px-4 py-2 bg-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition">
-                        Sponsored
-                    </button>
-                    <button class="px-4 py-2 bg-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition">
-                        Educational
-                    </button>
-                    <button class="px-4 py-2 bg-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition">
-                        Nature
-                    </button>
-                    <button class="px-4 py-2 bg-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition">
-                        Residential
-                    </button>
-                    <button class="px-4 py-2 bg-gray-200 rounded-full hover:bg-blue-600 hover:text-white transition">
-                        Healthcare
-                    </button>
-                </div>
-
-
-                <!-- Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project 1 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="Capital Teltway Building"
-                                class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">Capital Teltway Building</a></h3>
-                            <p class="text-gray-600">Commercial, Interiors</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 2 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="Ghum Touch Hospital"
-                                class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">Ghum Touch Hospital</a></h3>
-                            <p class="text-gray-600">Healthcare</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="TNT East Facility" class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">TNT East Facility</a></h3>
-                            <p class="text-gray-600">Government</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 4 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="Narriot Headquarters"
-                                class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">Narriot Headquarters</a></h3>
-                            <p class="text-gray-600">Infrastructure</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 5 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="Kalas Metrorail" class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">Kalas Metrorail</a></h3>
-                            <p class="text-gray-600">Infrastructure</p>
-                        </div>
-                    </div>
-
-                    <!-- Project 6 -->
-                    <div class="project-item bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition">
-                        <div class="relative group">
-                            <img src="imgs/BG1-Slideshow.jpg" alt="Ancraft Avenue House"
-                                class="w-full h-64 object-cover">
-                            <div
-                                class="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                                <i class="fas fa-plus text-white text-2xl"></i>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2"><a href="projects-single.html"
-                                    class="hover:text-blue-600 transition">Ancraft Avenue House</a></h3>
-                            <p class="text-gray-600">Residential</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- View All Button -->
-                <div class="text-center mt-12">
-                    <a href="projects.html"
-                        class="inline-block px-8 py-3 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                        View All Projects
+            <!-- Social and Contact -->
+            <div>
+                <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Follow Us</h3>
+                <div class="flex space-x-4 mb-6">
+                    <a href="https://www.tiktok.com/@volunteeringmarathon?_t=ZS-8xjjY8pQ12d&_r=1"
+                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/volunteeringmarathon/"
+                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
                     </a>
                 </div>
-            </div>
-        </section>
-        <!-- footer -->
-        <footer class="bg-red-700 text-white py-12 px-6">
-            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-start">
-                <div class="mb-8 lg:mb-0 lg:max-w-md">
-                    <div class="flex items-center mb-6">
-                        <div class="mr-3">
-                            <!-- Heart icon -->
-                            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                            </svg>
-                        </div>
-                        <h2 class="text-xl font-semibold">
-                            Volunteering<br>
-                            Marathon
-                        </h2>
-                    </div>
-                    <p class="text-gray-300 text-sm leading-relaxed">
-                        Grow, Connect, and<br>
-                        Make an Impact with<br>
-                        Exclusive<br>
-                        Volunteering<br>
-                        Experiences.
-                    </p>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span class="text-sm text-gray-300">volunteeringmarathon@gmail.com</span>
                 </div>
-                <div class="mb-8 lg:mb-0">
-                    <h3 class="text-sm font-medium mb-4 tracking-wide">QUICK LINKS</h3>
-                    <ul class="space-y-2 text-sm text-gray-300">
-                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="Projects.html" class="hover:text-white transition-colors">Projects</a></li>
-                        <li><a href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
-                        <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="lg:text-right">
-                    <h3 class="text-sm font-medium mb-4 tracking-wide">FOLLOW US:</h3>
-                    <div class="flex space-x-4 mb-6 lg:justify-end">
-                        <a href="https://www.tiktok.com/@volunteeringmarathon?_t=ZS-8xjjY8pQ12d&_r=1"
-                            class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                            </svg>
-                        </a>
-                        <a href="https://www.instagram.com/volunteeringmarathon/"
-                            class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="flex items-center space-x-2 lg:justify-end">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                        <span class="text-sm text-gray-300">volunteeringmarathon@gmail.com</span>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <div class="bg-gray-100 py-4 text-center text-sm text-gray-600">
-            <div class="container mx-auto px-4">
-                © 2025 All Rights Reserved. Created by
-                <a href="noursaneh.com" class="hover:underline">Nour saneh</a>
-                &
-                <a href="about-nour.html" class="hover:underline">Karim Hatoum</a>
             </div>
         </div>
+    </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                const filterButtons = document.querySelectorAll('.filter-btn');
-                const projectCards = document.querySelectorAll('.project-card');
+    <!-- Copyright -->
+    <div class="bg-gray-100 py-4 text-center text-sm text-gray-600">
+        <div class="container mx-auto px-4">
+            © 2025 All Rights Reserved. Created by
+            <a href="noursaneh.com" class="hover:underline">Nour Saneh</a>
+            &amp;
+            <a href="about-nour.html" class="hover:underline">Karim Hatoum</a>
+        </div>
+    </div>
+</footer>
 
-                filterButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const filter = button.getAttribute('data-filter');
+  <!-- Script to load projects -->
+<script>
+    const projectsPerPage = 9; // 3 rows x 3 columns
+    let currentPage = 1;
+    let allProjects = [];
+    let filteredProjects = [];
+    let currentFilter = 'all';
 
-                        // Style the active button
-                        filterButtons.forEach(btn => {
-                            btn.classList.remove('bg-blue-600', 'text-white');
-                            btn.classList.add('bg-white', 'text-gray-700');
-                        });
-                        button.classList.add('bg-blue-600', 'text-white');
-                        button.classList.remove('bg-white', 'text-gray-700');
+    function filterProjects(category) {
+        currentFilter = category;
+        currentPage = 1; // Reset to first page when filtering
+        
+        // Update active filter button styles
+        document.querySelectorAll('.flex-wrap button').forEach(button => {
+            if (button.textContent === 'Show All' && category === 'all') {
+                button.classList.remove('bg-gray-200');
+                button.classList.add('bg-green-600', 'text-white');
+                button.classList.remove('hover:bg-green-600', 'hover:text-white');
+                button.classList.add('hover:bg-green-700');
+            } else if (button.textContent === category && category !== 'all') {
+                button.classList.remove('bg-gray-200');
+                button.classList.add('bg-green-600', 'text-white');
+                button.classList.remove('hover:bg-green-600', 'hover:text-white');
+                button.classList.add('hover:bg-green-700');
+            } else {
+                button.classList.add('bg-gray-200');
+                button.classList.remove('bg-green-600', 'text-white');
+                button.classList.add('hover:bg-green-600', 'hover:text-white');
+                button.classList.remove('hover:bg-green-700');
+            }
+        });
 
+        if (category === 'all') {
+            filteredProjects = [...allProjects];
+        } else {
+            filteredProjects = allProjects.filter(project => project.category === category);
+        }
+        
+        displayProjects(filteredProjects, currentPage);
+        setupPagination(filteredProjects);
+    }
 
-                        // Filter the project cards
-                        projectCards.forEach(card => {
-                            const category = card.getAttribute('data-category');
-                            if (filter === 'all' || filter === category) {
-                                card.classList.remove('hidden');
-                            } else {
-                                card.classList.add('hidden');
-                            }
-                        });
-                    });
-                });
+    function displayProjects(projects, page) {
+        const container = document.getElementById('projectsGrid');
+        const startIndex = (page - 1) * projectsPerPage;
+        const paginatedProjects = projects.slice(startIndex, startIndex + projectsPerPage);
+        
+        container.innerHTML = paginatedProjects.map(project => `
+            <div class="project-item relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64">
+                <img src="${project.image_path}" alt="${project.title}" class="w-full h-full object-cover">
+                
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300 p-4">
+                    <!-- Plus button in top right -->
+                    <div class="absolute top-0 right-0 bg-green-600 w-10 h-10 flex items-center justify-center hover:cursor-pointer">
+                        <i class="fas fa-plus text-white"></i>
+                    </div>
+                    
+                    <!-- Content in center -->
+                    <div class="text-left">
+                        <h3 class="text-white text-3xl font-bold mb-2">${project.title}</h3>
+                        <br>
+                        <span class="bg-green-600 text-white font-bold text-sm px-3 py-1">${project.category}</span>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function setupPagination(projects) {
+        const paginationDiv = document.getElementById('pagination');
+        paginationDiv.innerHTML = '';
+        
+        const pageCount = Math.ceil(projects.length / projectsPerPage);
+        
+        if (pageCount <= 1) {
+            paginationDiv.classList.add('hidden');
+            return;
+        }
+        
+        paginationDiv.classList.remove('hidden');
+        
+        // Previous button
+        if (currentPage > 1) {
+            const prevButton = document.createElement('button');
+            prevButton.innerText = '←';
+            prevButton.className = 'px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition';
+            prevButton.addEventListener('click', () => {
+                currentPage--;
+                displayProjects(projects, currentPage);
+                setupPagination(projects);
             });
-        </script>
+            paginationDiv.appendChild(prevButton);
+        }
+        
+        // Page numbers
+        for (let i = 1; i <= pageCount; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.innerText = i;
+            pageButton.className = `px-4 py-2 rounded-full transition ${currentPage === i ? 'bg-green-600 text-white' : 'bg-gray-200 hover:bg-green-600 hover:text-white'}`;
+            pageButton.addEventListener('click', () => {
+                currentPage = i;
+                displayProjects(projects, currentPage);
+                setupPagination(projects);
+            });
+            paginationDiv.appendChild(pageButton);
+        }
+        
+        // Next button
+        if (currentPage < pageCount) {
+            const nextButton = document.createElement('button');
+            nextButton.innerText = '→';
+            nextButton.className = 'px-4 py-2 bg-gray-200 rounded-full hover:bg-green-600 hover:text-white transition';
+            nextButton.addEventListener('click', () => {
+                currentPage++;
+                displayProjects(projects, currentPage);
+                setupPagination(projects);
+            });
+            paginationDiv.appendChild(nextButton);
+        }
+    }
 
-    </body>
+    fetch('server/get_projects.php')
+        .then(res => res.json())
+        .then(projects => {
+            allProjects = projects;
+            filteredProjects = [...allProjects];
+            displayProjects(filteredProjects, currentPage);
+            setupPagination(filteredProjects);
+        });
+</script>
 
-<<<<<<< HEAD
-    </html>
-=======
-    </html>
 </body>
->>>>>>> 4cb9a16e31f228712cfbbfc184c253320167f562
+</html>
