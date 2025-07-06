@@ -6,6 +6,17 @@
   <title>Our Projects</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  <style>
+    .fade-slide-enter {
+        @apply opacity-0 translate-y-5;
+    }
+
+    .fade-slide-enter-active {
+        @apply opacity-100 translate-y-0 transition-all duration-500 ease-out;
+    }
+  </style>
+
 </head>
 <body class="bg-white">
 
@@ -199,26 +210,33 @@
     const startIndex = (page - 1) * projectsPerPage;
     const paginatedProjects = projects.slice(startIndex, startIndex + projectsPerPage);
     
-    container.innerHTML = paginatedProjects.map(project => `
-        <div class="project-item relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64">
+    container.innerHTML = ''; // Clear previous content
+
+    paginatedProjects.forEach((project, index) => {
+        const card = document.createElement('div');
+        card.className = 'project-item relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition h-64 fade-slide-enter';
+
+        card.innerHTML = `
             <img src="${project.image_path}" alt="${project.title}" class="w-full h-full object-cover">
-            
-            <!-- Hover Overlay -->
             <div class="absolute inset-0 bg-black/70 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition-all duration-300 p-4">
-                <!-- Plus button in top right -->
                 <div onclick="window.location.href='project-details.html?id=${project.id}'" class="absolute top-0 right-0 bg-green-600 w-10 h-10 flex items-center justify-center hover:cursor-pointer">
                     <i class="fas fa-plus text-white"></i>
                 </div>
-                
-                <!-- Content in center -->
                 <div class="text-left">
                     <h3 class="text-white text-3xl font-bold mb-2">${project.title}</h3>
                     <br>
                     <span class="bg-green-600 text-white font-bold text-sm px-3 py-1">${project.category}</span>
                 </div>
             </div>
-        </div>
-    `).join('');
+        `;
+
+        container.appendChild(card);
+
+        // Delay animation for staggered effect
+        setTimeout(() => {
+            card.classList.add('fade-slide-enter-active');
+        }, index * 100);
+    });
 }
 
     function setupPagination(projects) {
