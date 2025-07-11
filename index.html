@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Centered Logo Navbar</title>
+    <title>volunteeringmarathon</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link src="index.js">
+    <!-- Remove incorrect link tag; replace with script if needed -->
+    <!-- <link src="index.js"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anybody&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Exa&display=swap" rel="stylesheet">
@@ -15,74 +16,67 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Limelight&family=Martel:wght@200;300;400;600;700;800;900&display=swap"
         rel="stylesheet">
-
-
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-
 </head>
 
 <body class="bg-white">
     <header class="bg-white shadow-md sticky top-0 z-50">
         <nav class="bg-[#063B0C] text-white shadow py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center relative">
-                <div class="hidden lg:flex space-x-20 items-center flex-1">
-                    <button
-                        class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
-                    <a href="index.html" class="text-white font-medium hover:text-gray-300">Home</a>
-                    <a href="Projects.html" class="text-white font-medium hover:text-gray-300">Projects</a>
-                </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center relative">
+                    <div class="hidden lg:flex space-x-20 items-center flex-1">
+                        <button
+                            class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+                        <a href="index.html" class="text-white font-medium hover:text-gray-300">Home</a>
+                        <a href="Projects.html" class="text-white font-medium hover:text-gray-300">Projects</a>
+                    </div>
 
-                <div class="absolute left-1/2 transform -translate-x-1/2">
-                    <img src="imgs/Logo.png" alt="Logo" class="h-14 sm:h-16 md:h-20 w-auto">
-                </div>
-                <div class="hidden lg:flex space-x-20 items-center justify-end flex-1">
-                    <a href="todo-donate.html" class="text-white font-medium hover:text-gray-300">Donate</a>
-                    <a href="contact.html" class="text-white font-medium hover:text-gray-300">Contact</a>
-                    <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
-                        US</button>
-                </div>
+                    <div class="absolute left-1/2 transform -translate-x-1/2">
+                        <img src="imgs/Logo.png" alt="Logo" class="h-14 sm:h-16 md:h-20 w-auto">
+                    </div>
+                    <div class="hidden lg:flex space-x-20 items-center justify-end flex-1">
+                        <a href="todo-donate.html" class="text-white font-medium hover:text-gray-300">Donate</a>
+                        <a href="contact.html" class="text-white font-medium hover:text-gray-300">Contact</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSea0DuJKaBNhX36cXB1QGmWWLsKdsC7CWl9QXGg-zkOSgIAxw/viewform"
+                            target="_blank"
+                            class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN US</a>
 
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="menu-btn" class="text-white focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
+                    </div>
+
+                    <!-- Mobile menu button -->
+                    <div class="lg:hidden flex items-center">
+                        <button id="menu-btn" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="lg:hidden hidden px-4 pt-4 pb-6 space-y-4">
-            <button class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Schedule</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Events</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Donate</a>
-            <a href="#" class="block text-white font-medium hover:text-gray-300">Contact</a>
-            <button class="w-full bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">JOIN
-                US</button>
-        </div>
-    </nav>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden px-4 pt-4 pb-6 space-y-4">
+                <button
+                    class="bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium">SPONSORS</button>
+                <a href="#" class="block text-white font-medium hover:text-gray-300">Schedule</a>
+                <a href="#" class="block text-white font-medium hover:text-gray-300">Events</a>
+                <a href="#" class="block text-white font-medium hover:text-gray-300">Donate</a>
+                <a href="#" class="block text-white font-medium hover:text-gray-300">Contact</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSea0DuJKaBNhX36cXB1QGmWWLsKdsC7CWl9QXGg-zkOSgIAxw/viewform"
+                    class="w-full bg-white text-green-900 px-4 py-2 rounded hover:bg-gray-200 font-medium text-center block">
+                    JOIN US
+                </a>
+
+            </div>
+        </nav>
     </header>
     <main>
         <div id="carouselExampleIndicators" class="relative" data-twe-carousel-init data-twe-ride="carousel">
@@ -149,7 +143,7 @@
             <div class="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
 
                 <!-- Video with red & green rectangles -->
-                <div class="relative w-80 h-96">
+                <div class="relative w-80 h-96 animated-video-box">
                     <div class="absolute inset-0 bg-green-700 z-0 translate-x-4 translate-y-4"></div>
                     <div class="absolute inset-0 bg-red-600 z-10 -translate-x-4 -translate-y-4"></div>
                     <div class="relative w-full h-full z-20 overflow-hidden">
@@ -200,33 +194,41 @@
 
 
         <!-- Flag Secton -->
-        <section class="bg-[url('imgs/BG-Section3.jpg')] bg-cover bg-center py-40 relative">
+        <section
+            class="bg-[url('imgs/BG-Section3.jpg')] bg-cover bg-center py-32 relative text-center text-white w-full px-4">
+            <!-- Top Heading -->
             <h2
-                class="absolute top-4 left-1/2 transform -translate-x-1/2 font-['Merriweather'] text-[rgba(156,2,2,0.5)] text-5xl font-bold">
-                FROM SOUTH TO NORTH </h2>
+                class="absolute top-4 left-1/2 transform -translate-x-1/2 font-['Merriweather'] text-[rgba(156,2,2,0.5)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                FROM SOUTH TO NORTH
+            </h2>
 
             <!-- Stats Section -->
-            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex gap-16 text-white">
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row items-center gap-6 md:gap-12">
                 <div class="text-center">
-                    <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-xl font-['Montserrat']">Days</p>
+                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                    <p class="text-lg sm:text-xl font-['Montserrat']">Days</p>
                 </div>
                 <div class="text-center">
-                    <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-xl font-['Montserrat']">Districts</p>
+                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                    <p class="text-lg sm:text-xl font-['Montserrat']">Districts</p>
                 </div>
                 <div class="text-center">
-                    <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="2500">0</h3>
-                    <p class="text-xl font-['Montserrat']">Volunteers</p>
+                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="2500">0</h3>
+                    <p class="text-lg sm:text-xl font-['Montserrat']">Volunteers</p>
                 </div>
                 <div class="text-center">
-                    <h3 class="text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-xl font-['Montserrat']">Projects</p>
+                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+                    <p class="text-lg sm:text-xl font-['Montserrat']">Projects</p>
                 </div>
             </div>
+
+            <!-- Bottom Heading -->
             <h2
-                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 font-['Merriweather']  text-[rgba(34,82,28,0.8)] text-5xl font-bold">
-                ALL UNITED FOR LEBANON </h2>
+                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 font-['Merriweather'] text-[rgba(34,82,28,0.8)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
+                ALL UNITED FOR LEBANON
+            </h2>
+
             <script>
                 const counters = document.querySelectorAll('.count-up');
 
@@ -402,7 +404,8 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-                    <a href="#"
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSea0DuJKaBNhX36cXB1QGmWWLsKdsC7CWl9QXGg-zkOSgIAxw/viewform"
+                        target="_blank"
                         class="relative overflow-hidden group rounded-full bg-white text-black font-semibold px-8 py-4 flex items-center justify-center gap-2 text-lg shadow-md transition-transform duration-300 ease-out hover:scale-105 hover:-skew-x-2">
                         <span class="transition-all duration-300 group-hover:translate-x-1">BECOME A VOLUNTEER</span>
                         <span
@@ -420,75 +423,79 @@
                 </div>
             </div>
         </section>
-          <!-- footer -->
-<footer class="bg-red-700 text-white">
-    <div class="container mx-auto px-4 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Logo and Description -->
-            <div class="lg:col-span-2">
-                <div class="flex items-center mb-4">
-                    <div class="mr-3">
-                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-                        </svg>
+        <!-- footer -->
+        <footer class="bg-red-700 text-white">
+            <div class="container mx-auto px-4 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Logo and Description -->
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center mb-4">
+                            <div class="mr-3">
+                                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                            </div>
+                            <h2 class="text-xl font-semibold">
+                                Volunteering<br>Marathon
+                            </h2>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Grow, Connect, and Make an Impact with Exclusive Volunteering Experiences.
+                        </p>
                     </div>
-                    <h2 class="text-xl font-semibold">
-                        Volunteering<br>Marathon
-                    </h2>
-                </div>
-                <p class="text-gray-300 text-sm leading-relaxed">
-                    Grow, Connect, and Make an Impact with Exclusive Volunteering Experiences.
-                </p>
-            </div>
 
-            <!-- Quick Links -->
-            <div>
-                <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Quick Links</h3>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
-                    <li><a href="Projects.html" class="hover:text-white transition-colors">Projects</a></li>
-                    <li><a href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
-                    <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Quick Links</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                            <li><a href="Projects.html" class="hover:text-white transition-colors">Projects</a></li>
+                            <li><a href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
+                            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
 
-            <!-- Social and Contact -->
-            <div>
-                <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Follow Us</h3>
-                <div class="flex space-x-4 mb-6">
-                    <a href="https://www.tiktok.com/@volunteeringmarathon?_t=ZS-8xjjY8pQ12d&_r=1"
-                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/volunteeringmarathon/"
-                        class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="flex items-center space-x-2">
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                    </svg>
-                    <span class="text-sm text-gray-300">volunteeringmarathon@gmail.com</span>
+                    <!-- Social and Contact -->
+                    <div>
+                        <h3 class="text-sm font-medium mb-4 tracking-wide uppercase">Follow Us</h3>
+                        <div class="flex space-x-4 mb-6">
+                            <a href="https://www.tiktok.com/@volunteeringmarathon?_t=ZS-8xjjY8pQ12d&_r=1"
+                                class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/volunteeringmarathon/"
+                                class="w-10 h-10 bg-red-600 rounded flex items-center justify-center hover:bg-red-500 transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                            <span class="text-sm text-gray-300">volunteeringmarathon@gmail.com</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <!-- Copyright -->
-    <div class="bg-gray-100 py-4 text-center text-sm text-gray-600">
-        <div class="container mx-auto px-4">
-            © 2025 All Rights Reserved. Created by
-            <a href="noursaneh.com" class="hover:underline">Nour Saneh</a>
-            &amp;
-            <a href="about-nour.html" class="hover:underline">Karim Hatoum</a>
-        </div>
-    </div>
-</footer>
+            <!-- Copyright -->
+            <div class="bg-gray-100 py-4 text-center text-sm text-gray-600">
+                <div class="container mx-auto px-4">
+                    © 2025 All Rights Reserved. Created by
+                    <a href="noursaneh.com" class="hover:underline">Nour Saneh</a>
+                    &amp;
+                    <a href="about-nour.html" class="hover:underline">Karim Hatoum</a>
+                </div>
+            </div>
+        </footer>
     </main>
     <script type="module">
         import { Carousel, initTWE } from "https://esm.sh/tw-elements";
@@ -534,11 +541,12 @@
             });
 
             // Animate the video container
-            gsap.from(".w-80.h-96", {
+            gsap.from(".animated-video-box", {
                 scrollTrigger: {
-                    trigger: ".w-80.h-96",
-                    start: "top 80%",
-                    toggleActions: "play none none none"
+                    trigger: ".animated-video-box",
+                    start: "top 80%", // Adjusted for better visibility
+                    toggleActions: "play none none none",
+                    invalidateOnRefresh: true // Recalculate on refresh
                 },
                 x: -100,
                 opacity: 0,
@@ -546,11 +554,28 @@
                 ease: "back.out(1.7)"
             });
 
+            // Continuous bounce for video box
+            gsap.to(".animated-video-box", {
+                y: 10,
+                duration: 3,
+                repeat: -1,
+                yoyo: true,
+                ease: "sine.inOut",
+                scrollTrigger: {
+                    trigger: ".animated-video-box",
+                    start: "top 80%",
+                    toggleActions: "play pause resume pause",
+                    invalidateOnRefresh: true
+                }
+            });
+
+            // Animate green and red rectangles
             const aboutTimeline = gsap.timeline({
                 scrollTrigger: {
-                    trigger: ".about-section", // <-- use a custom class!
-                    start: "top 70%",
-                    toggleActions: "play none none none"
+                    trigger: ".animated-video-box", // Corrected trigger
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                    invalidateOnRefresh: true
                 }
             });
 
@@ -572,13 +597,9 @@
                 ease: "back.out(2)"
             }, 0);
 
-            // Continuous bounce for video box
-            gsap.to(".w-80.h-96", {
-                y: 10,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut"
+            // Refresh ScrollTrigger after DOM and assets load
+            window.addEventListener('load', () => {
+                ScrollTrigger.refresh();
             });
         });
     </script>
