@@ -195,76 +195,81 @@
 
         <!-- Flag Secton -->
         <section
-            class="bg-[url('imgs/BG-Section3.jpg')] bg-cover bg-center py-32 relative text-center text-white w-full px-4">
-            <!-- Top Heading -->
-            <h2
-                class="absolute top-4 left-1/2 transform -translate-x-1/2 font-['Merriweather'] text-[rgba(156,2,2,0.5)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                FROM SOUTH TO NORTH
-            </h2>
+  class="relative bg-[url('imgs/BG-Section3.jpg')] bg-cover bg-center px-4 py-20 text-center text-white w-full overflow-hidden">
 
-            <!-- Stats Section -->
-            <div
-                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col md:flex-row items-center gap-6 md:gap-12">
-                <div class="text-center">
-                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-lg sm:text-xl font-['Montserrat']">Days</p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-lg sm:text-xl font-['Montserrat']">Districts</p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="2500">0</h3>
-                    <p class="text-lg sm:text-xl font-['Montserrat']">Volunteers</p>
-                </div>
-                <div class="text-center">
-                    <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
-                    <p class="text-lg sm:text-xl font-['Montserrat']">Projects</p>
-                </div>
-            </div>
+  <!-- Top Heading -->
+  <h2
+    class="absolute top-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Merriweather'] text-[rgba(156,2,2,0.5)] z-10">
+    FROM SOUTH TO NORTH
+  </h2>
 
-            <!-- Bottom Heading -->
-            <h2
-                class="absolute bottom-4 left-1/2 transform -translate-x-1/2 font-['Merriweather'] text-[rgba(34,82,28,0.8)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                ALL UNITED FOR LEBANON
-            </h2>
+  <!-- Stats Section -->
+  <div
+    class="relative z-20 flex flex-wrap justify-center gap-y-10 gap-x-8 max-w-5xl mx-auto pt-20 pb-24 md:pt-32 md:pb-32">
+    
+    <div class="w-32 sm:w-40 md:w-48 text-center">
+      <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+      <p class="text-base sm:text-lg font-['Montserrat'] mt-1">Days</p>
+    </div>
 
-            <script>
-                const counters = document.querySelectorAll('.count-up');
+    <div class="w-32 sm:w-40 md:w-48 text-center">
+      <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+      <p class="text-base sm:text-lg font-['Montserrat'] mt-1">Districts</p>
+    </div>
 
-                const animateCounters = () => {
-                    counters.forEach(counter => {
-                        const target = +counter.getAttribute('data-target');
-                        const duration = 2000; // total time in ms
-                        const startTime = performance.now();
+    <div class="w-32 sm:w-40 md:w-48 text-center">
+      <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="2500">0</h3>
+      <p class="text-base sm:text-lg font-['Montserrat'] mt-1">Volunteers</p>
+    </div>
 
-                        const update = (currentTime) => {
-                            const elapsed = currentTime - startTime;
-                            const progress = Math.min(elapsed / duration, 1);
-                            const value = Math.floor(progress * target);
-                            counter.textContent = value.toLocaleString(); // add commas if needed
-                            if (progress < 1) requestAnimationFrame(update);
-                            else counter.textContent = target + '+'; // finalize with '+'
-                        };
+    <div class="w-32 sm:w-40 md:w-48 text-center">
+      <h3 class="text-3xl sm:text-4xl font-['anybody'] font-bold count-up" data-target="200">0</h3>
+      <p class="text-base sm:text-lg font-['Montserrat'] mt-1">Projects</p>
+    </div>
+  </div>
 
-                        requestAnimationFrame(update);
-                    });
-                };
+  <!-- Bottom Heading -->
+  <h2
+    class="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold font-['Merriweather'] text-[rgba(34,82,28,0.8)] z-10">
+    ALL UNITED FOR LEBANON
+  </h2>
 
-                // Optionally animate only when visible
-                const observer = new IntersectionObserver(entries => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            animateCounters();
-                            observer.disconnect(); // run only once
-                        }
-                    });
-                });
+  <!-- Counter Animation Script -->
+  <script>
+    const counters = document.querySelectorAll('.count-up');
 
-                observer.observe(document.querySelector('.count-up'));
-            </script>
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const duration = 2000;
+        const startTime = performance.now();
 
-        </section>
+        const update = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          const value = Math.floor(progress * target);
+          counter.textContent = value.toLocaleString();
+          if (progress < 1) requestAnimationFrame(update);
+          else counter.textContent = target + '+';
+        };
+
+        requestAnimationFrame(update);
+      });
+    };
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          observer.disconnect();
+        }
+      });
+    });
+
+    observer.observe(document.querySelector('.count-up'));
+  </script>
+</section>
+
         <!-- Gallery Section -->
         <section class="relative bg-gray-100 overflow-hidden">
             <div class="text-center py-8">
@@ -497,112 +502,113 @@
             </div>
         </footer>
     </main>
-    <script type="module">
-        import { Carousel, initTWE } from "https://esm.sh/tw-elements";
-        import { gsap } from "https://esm.sh/gsap";
-        import { ScrollTrigger } from "https://esm.sh/gsap/ScrollTrigger";
+<script type="module">
+  import { Carousel, initTWE } from "https://esm.sh/tw-elements";
+  import { gsap } from "https://esm.sh/gsap";
+  import { ScrollTrigger } from "https://esm.sh/gsap/ScrollTrigger";
 
-        gsap.registerPlugin(ScrollTrigger);
-        initTWE({ Carousel });
+  gsap.registerPlugin(ScrollTrigger);
+  initTWE({ Carousel });
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-            if (menuBtn && mobileMenu) {
-                menuBtn.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
 
-            const descEl = document.getElementById("about-desc");
+    const descEl = document.getElementById("about-desc");
 
-            const missionText = "Our mission is to ignite the spirit of volunteerism across Lebanon by connecting youth with meaningful opportunities to serve their communities, promote unity, and drive positive change.";
-            const visionText = "We envision a future where every young individual in Lebanon is empowered to become a changemaker building a stronger, more united society through consistent acts of kindness and service.";
-            const goalText = "Our goal is to mobilize over 5,000 volunteers by 2025, host impactful community events in all regions of Lebanon, and build lasting partnerships with NGOs to amplify our impact.";
+    const missionText = "Our mission is to ignite the spirit of volunteerism across Lebanon by connecting youth with meaningful opportunities to serve their communities, promote unity, and drive positive change.";
+    const visionText = "We envision a future where every young individual in Lebanon is empowered to become a changemaker building a stronger, more united society through consistent acts of kindness and service.";
+    const goalText = "Our goal is to mobilize over 5,000 volunteers by 2025, host impactful community events in all regions of Lebanon, and build lasting partnerships with NGOs to amplify our impact.";
 
-            document.getElementById("btn-mission").addEventListener("click", () => {
-                descEl.textContent = missionText;
-            });
-            document.getElementById("btn-vision").addEventListener("click", () => {
-                descEl.textContent = visionText;
-            });
-            document.getElementById("btn-goal").addEventListener("click", () => {
-                descEl.textContent = goalText;
-            });
+    document.getElementById("btn-mission").addEventListener("click", () => {
+      descEl.textContent = missionText;
+    });
+    document.getElementById("btn-vision").addEventListener("click", () => {
+      descEl.textContent = visionText;
+    });
+    document.getElementById("btn-goal").addEventListener("click", () => {
+      descEl.textContent = goalText;
+    });
 
-            // Logo pulse animation
-            gsap.to("nav img", {
-                scale: 1.1,
-                repeat: -1,
-                yoyo: true,
-                duration: 2,
-                ease: "sine.inOut"
-            });
+    // Logo pulse animation
+    gsap.to("nav img", {
+      scale: 1.1,
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "sine.inOut"
+    });
 
-            // Animate the video container
-            gsap.from(".animated-video-box", {
-                scrollTrigger: {
-                    trigger: ".animated-video-box",
-                    start: "top 80%", // Adjusted for better visibility
-                    toggleActions: "play none none none",
-                    invalidateOnRefresh: true // Recalculate on refresh
-                },
-                x: -100,
-                opacity: 0,
-                duration: 1,
-                ease: "back.out(1.7)"
-            });
+    // Animate the video container
+    gsap.from(".animated-video-box", {
+      scrollTrigger: {
+        trigger: ".animated-video-box",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        invalidateOnRefresh: true
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "back.out(1.7)"
+    });
 
-            // Continuous bounce for video box
-            gsap.to(".animated-video-box", {
-                y: 10,
-                duration: 3,
-                repeat: -1,
-                yoyo: true,
-                ease: "sine.inOut",
-                scrollTrigger: {
-                    trigger: ".animated-video-box",
-                    start: "top 80%",
-                    toggleActions: "play pause resume pause",
-                    invalidateOnRefresh: true
-                }
-            });
+    // Continuous bounce for video box
+    gsap.to(".animated-video-box", {
+      y: 10,
+      duration: 3,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      scrollTrigger: {
+        trigger: ".animated-video-box",
+        start: "top 80%",
+        toggleActions: "play pause resume pause",
+        invalidateOnRefresh: true
+      }
+    });
 
-            // Animate green and red rectangles
-            const aboutTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".animated-video-box", // Corrected trigger
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                    invalidateOnRefresh: true
-                }
-            });
+    // Animate green and red rectangles
+    const aboutTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".animated-video-box",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        invalidateOnRefresh: true
+      }
+    });
 
-            aboutTimeline.from(".bg-green-700", {
-                x: -100,
-                y: 100,
-                rotation: -15,
-                opacity: 0,
-                duration: 2,
-                ease: "back.out(2)"
-            }, 0);
+    aboutTimeline.from(".bg-green-700", {
+      x: -100,
+      y: 100,
+      rotation: -15,
+      opacity: 0,
+      duration: 2,
+      ease: "back.out(2)"
+    }, 0);
 
-            aboutTimeline.from(".bg-red-600", {
-                x: 100,
-                y: -100,
-                rotation: 15,
-                opacity: 0,
-                duration: 2,
-                ease: "back.out(2)"
-            }, 0);
+    aboutTimeline.from(".bg-red-600", {
+      x: 100,
+      y: -100,
+      rotation: 15,
+      opacity: 0,
+      duration: 2,
+      ease: "back.out(2)"
+    }, 0);
 
-            // Refresh ScrollTrigger after DOM and assets load
-            window.addEventListener('load', () => {
-                ScrollTrigger.refresh();
-            });
-        });
-    </script>
+    // Refresh ScrollTrigger after all assets load
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+  });
+</script>
+
 
 </body>
 
